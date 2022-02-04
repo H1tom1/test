@@ -52,6 +52,8 @@ public class CombatManager : StrixBehaviour
             deadTime = Time.time;
             //リカバー期間はアタリ判定を無くす為にメッセージ送信
             SendMessage("WhileDeath", SendMessageOptions.DontRequireReceiver);
+            Manager.SendMessage("ChangeScore2", 5,
+            SendMessageOptions.DontRequireReceiver);
         }
         health = newHealth; //新ヘルス値を現在ヘルスに反映
     }

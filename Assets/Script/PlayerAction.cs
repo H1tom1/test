@@ -37,7 +37,6 @@ public class PlayerAction : StrixBehaviour
         myRB.useGravity = false;
         myRB.Sleep();
         myCol.enabled = false;
-        Manager.SendMessage("ChangeScore2");
     }
     //リスポーン処理
     void Respawn()
