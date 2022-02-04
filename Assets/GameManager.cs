@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     void ChangeScore2(int Point)
     {
         myScore -= Point;
-        txtScore.text = "SCORE : " + myScore.ToString().PadLeft(0, '0');
+        txtScore.text = "SCORE : " + myScore.ToString().PadLeft(0, '5');
     }
 
     void GameStart()
