@@ -8,6 +8,7 @@ public class CombatManager : StrixBehaviour
     float deadTime = 0; //死亡時刻
     public float recoverTime = 2.5f; //リカバー時間
     Animator myAnim; //自身のアニメーター
+    GameObject Manager;
     public int maxHealth = 100; //ヘルスの最大値
     [StrixSyncField] //変数をネットワーク同期
     public int health = 100;
@@ -46,6 +47,7 @@ public class CombatManager : StrixBehaviour
         }
         if (health != newHealth && newHealth <= 0)
         {
+            Manager.SendMessage("ChangeScore2");
             //Debug.Log("Detected Death !"); //自身の死亡を検出
             //リカバー時間経過後に復帰すべく、死亡時刻を記録
             deadTime = Time.time;
