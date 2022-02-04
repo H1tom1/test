@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public Text txtScore;
     public Text txtTime;
     public Text txtMessage;
-    public GameObject Choco3Prefab;
+    public GameObject Choco1Prefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,11 +41,7 @@ public class GameManager : MonoBehaviour
                 float RanX = Random.Range(-15.0f, 15.0f);
                 float RanZ = Random.Range(-10.0f, 10.0f);
                 Vector3 pos = new Vector3(RanX, 1.0f, RanZ); //生成位置決定
-                if (Random.value < 0.3f)
-                { //30%の確率で高い位置
-                    pos.y = 2.3f;
-                }
-                Instantiate(Choco3Prefab, pos, Quaternion.identity);
+                Instantiate(Choco1Prefab, pos, Quaternion.identity);
             }
         }
     }
@@ -53,7 +49,13 @@ public class GameManager : MonoBehaviour
     void ChangeScore(int Point)
     {
         myScore += Point;
-        txtScore.text = "SCORE : " + myScore.ToString().PadLeft(6, '0');
+        txtScore.text = "SCORE : " + myScore.ToString().PadLeft(0, '0');
+    }
+
+    void ChangeScore2(int Point)
+    {
+        myScore -= Point;
+        txtScore.text = "SCORE : " + myScore.ToString().PadLeft(0, '5');
     }
 
     void GameStart()
@@ -79,8 +81,6 @@ public class GameManager : MonoBehaviour
         switch (GameStatus)
         {
             case STS.PLAY:
-                //Elapsed += Time.deltaTime;
-               // Elapsed %= 1.0f;
                 Elapsed += Time.deltaTime;
                 if (Elapsed >= LimitTime)
                 {

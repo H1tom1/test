@@ -9,6 +9,7 @@ public class PlayerAction : StrixBehaviour
     public float fwdSpeed = 3.0f; //前進速度
     public float backSpeed = 0.8f; //後進速度
     GameObject DebugUI; //デバッグＵＩ
+    GameObject Manager;
     Animator myAnim; //自身のアニメーター
     Transform MuzzlePos; //銃口の位置
     public float bulletSpeed = 30.0f; //弾の速度
@@ -36,6 +37,7 @@ public class PlayerAction : StrixBehaviour
         myRB.useGravity = false;
         myRB.Sleep();
         myCol.enabled = false;
+        Manager.SendMessage("ChangeScore2");
     }
     //リスポーン処理
     void Respawn()
