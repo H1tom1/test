@@ -47,7 +47,6 @@ public class CombatManager : StrixBehaviour
         }
         if (health != newHealth && newHealth <= 0)
         {
-            Manager.SendMessage("ChangeScore2");
             //Debug.Log("Detected Death !"); //自身の死亡を検出
             //リカバー時間経過後に復帰すべく、死亡時刻を記録
             deadTime = Time.time;
