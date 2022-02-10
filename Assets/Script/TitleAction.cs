@@ -19,7 +19,7 @@ public class TitleAction : MonoBehaviour
     {
         Elapsed += Time.deltaTime;
         Elapsed %= 1.0f;
-        txtNavigate.text = (Elapsed < 0.8f) ? "Please Push LMB" : "";
+        txtNavigate.text = (Elapsed < 0.8f) ? "Push LMB to Rule1" : "";
         if (Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("Rule");

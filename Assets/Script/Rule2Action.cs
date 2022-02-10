@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI; //uGUIを用いるのに必要
 using UnityEngine.SceneManagement; //シーン切り替えに必要
 
-public class RuleAction : MonoBehaviour
+public class Rule2Action : MonoBehaviour
 {
     float Elapsed = 0.0f;
     public Text txtNavigate;
@@ -19,10 +19,10 @@ public class RuleAction : MonoBehaviour
     {
         Elapsed += Time.deltaTime;
         Elapsed %= 1.0f;
-        txtNavigate.text = (Elapsed < 0.8f) ? "Push LMB to Rule2" : "";
+        txtNavigate.text = (Elapsed < 0.8f) ? "Push LMB to Play" : "";
         if (Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("Rule2");
+            SceneManager.LoadScene("Main");
         }
     }
 }
